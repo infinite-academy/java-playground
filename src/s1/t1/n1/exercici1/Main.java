@@ -6,10 +6,11 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args){
-        for (Tipus tipus : Tipus.values()) {
+        System.out.println("Assert that instrument is loaded via static accessor(loaded) before instantiating: " + Instrument.loaded);
+        for (Instrument.Tipus tipus : Instrument.Tipus.values()) {
             // Gnrate a random float between 1.0f and 1000.0f
             float preu = (new Random().nextFloat() + 1) * 1000;
-            String nom = "Instrument" + tipus.toString();
+            String nom = "Instrument-" + tipus.toString();
 
             Instrument instrumentInstance = new Instrument(tipus.toString(), nom , preu);
             instrumentInstance.tocar();
@@ -22,13 +23,24 @@ public class Main {
 //     void tocar();
 // }
 
-enum Tipus {
-    vent,
-    corda,
-    percussió
-}
+
 
 class Instrument {
+    // Loaded is being used because using enums to 
+    static boolean loaded = false;
+
+    static {
+        // Because it will only be loaded once, this will only be printed once. 
+        System.out.println("Instrument loaded.");
+        loaded = true;
+    }
+
+    static enum Tipus {
+        vent,
+        corda,
+        percussió
+    }
+
     
 
     Instrument(String tipus, String nom, float preu) {
