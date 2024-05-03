@@ -6,19 +6,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "javaPlayground.src.s1.t1.n1.exercici2.Main",
-            "projectName": ""
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "javaPlayground.src.s1.t1.n2.exercici1.Main"
-        },
-        {
-            "type": "java",
             "name": "JVM",
             "request": "launch",
             "mainClass": "${file}"

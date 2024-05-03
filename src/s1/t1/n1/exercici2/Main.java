@@ -1,4 +1,4 @@
-package javaPlayground.src.s1.t1.n1.exercici2;
+package s1.t1.n1.exercici2;
 
 public class Main {
     void main(String[] args) {
