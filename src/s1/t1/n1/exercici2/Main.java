@@ -2,9 +2,7 @@ package javaPlayground.src.s1.t1.n1.exercici2;
 
 public class Main {
     void main(String[] args) {
-        Cotxe car = new Cotxe("Camaro"); 
-        System.out.println("Su potencia es:" + car.potencia);
-
+        Cotxe car = new Cotxe("Camaro", 300); 
         car.accelerar();
         Cotxe.frenar();
     }
@@ -12,17 +10,18 @@ public class Main {
 }
 
 class Cotxe {
-    static final String marca = "Ford";
+    static final String MARCA = "Ford";
     static String model = "Mustang";
-    final int potencia = 250;       
+    final int potencia;       
 
     static {
-        System.out.printf("Base cotxe cargado en memoria. Defaults: Marca: %s, Model: %s\n", Cotxe.marca, Cotxe.model);
+        System.out.printf("Base cotxe cargado en memoria. Defaults: Marca: %s, Model: %s\n", Cotxe.MARCA, Cotxe.model);
     }
 
-    Cotxe(String model){
+    Cotxe(String model, int potencia){
+        this.potencia = potencia;
         Cotxe.model = model;
-        System.out.println("Model: " + Cotxe.model);
+        System.out.println("Ford Cotxe created - Model: " + Cotxe.model + ", Potencia: " + potencia);
     }
 
 
