@@ -24,8 +24,9 @@ hs_err_pid*
 replay_pid*
 assert.bash
 
+
 # Ignore Gradle project-specific cache directory
-.gradle
+.gradle/
 
 # Ignore Gradle build output directory
 build
