@@ -40,3 +40,7 @@ assert.bash
 .gradle/buildOutputCleanup/outputFiles.bin
 .gradle/noVersion/buildLogic.lock
 .gradle/vcs-1/gc.properties
+
+.vscode/
+.gradle/
+bin
