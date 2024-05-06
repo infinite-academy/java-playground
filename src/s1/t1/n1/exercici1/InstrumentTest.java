@@ -9,13 +9,9 @@ interface InstrumentDef{
 
 
 class Instrument implements InstrumentDef {
-    // Loaded is being used because using enums to 
-    static boolean loaded = false;
-
     static {
         // Because it will only be loaded once, this will only be printed once. 
         System.out.println("Instrument loaded.");
-        loaded = true;
     }
 
     static enum Tipus {
