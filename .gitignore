@@ -29,3 +29,6 @@ assert.bash
 
 # Ignore Gradle build output directory
 build
+
+# Ignore build output
+/bin
