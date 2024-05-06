@@ -4,7 +4,7 @@ import java.util.Random;
 
 
 
-public class Main {
+public class InstrumentTest {
     public static void main(String[] args){
         System.out.println("Assert that instrument is loaded via static accessor(loaded) before instantiating: " + Instrument.loaded);
         for (Instrument.Tipus tipus : Instrument.Tipus.values()) {
