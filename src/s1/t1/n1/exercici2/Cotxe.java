@@ -2,9 +2,9 @@ package s1.t1.n1.exercici2;
 
 
 class Cotxe {
-    static final String MARCA = "Ford";
-    static String model = "Mustang";
-    final int potencia;       
+    protected static final String MARCA = "Ford";
+    protected static String model = "Mustang";
+    protected final int potencia;       
 
     static {
         System.out.printf("Base cotxe cargado en memoria. Defaults: Marca: %s, Model: %s\n", Cotxe.MARCA, Cotxe.model);
@@ -17,11 +17,11 @@ class Cotxe {
     }
 
 
-    static void frenar() {
+    protected static void frenar() {
         System.out.println("El vehicle està frenant");
     }
 
-    void accelerar() {
+    protected void accelerar() {
         System.out.println("El vehicle està accelerant");
     }
 

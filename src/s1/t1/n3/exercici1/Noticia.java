@@ -24,8 +24,9 @@ class Noticia implements NoticiaDef {
         this.tipus = tipus;
     }
 
+    // Why the forced public here? Cannot reduce the visibility of the inherited method from NoticiaDefJava(67109273)
     public void calcularPreuNoticia(String[] args) {
-        // TODO Auto-generated method stub
+       // TODO Auto-generated method stub
         
     }
 
