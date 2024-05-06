@@ -1,6 +1,6 @@
 package s1.t1.n2.exercici1;
 
-interface Types {
+interface Utils {
     void fotografiar();
 }
 
