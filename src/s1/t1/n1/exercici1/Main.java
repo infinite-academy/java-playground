@@ -5,16 +5,15 @@ import java.util.Random;
 
 
 class Main {
-    static void main(String[] args){
-        System.out.println("Assert that instrument is loaded via static accessor(loaded) before instantiating: " + Instrument.loaded);
+     static void main(String[] args){
 
-        VentInstrument vent = new VentInstrument("Flauta", (new Random().nextFloat() + 1) * 1000);        
+        VentInstrument vent = new VentInstrument("Flauta", (new Random().nextFloat()) * 1000);        
         vent.tocar();
 
-        CordaInstrument corda = new CordaInstrument("Guitar", (new Random().nextFloat() + 1) * 1000);        
+        CordaInstrument corda = new CordaInstrument("Guitar", (new Random().nextFloat() ) * 1000);        
         corda.tocar();
 
-        PercusioInstrument percusio = new PercusioInstrument("Tamborin", (new Random().nextFloat() + 1) * 1000);
+        PercusioInstrument percusio = new PercusioInstrument("Tamborin", (new Random().nextFloat()) * 1000);
         percusio.tocar();
     }
 }
