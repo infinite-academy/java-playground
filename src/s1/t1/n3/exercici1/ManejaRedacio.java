@@ -1,6 +1,6 @@
 package s1.t1.n3.exercici1;
 
-public class ManejoRedacion {
+public class ManejaRedacio {
     
 }
 
@@ -15,7 +15,7 @@ class Noticia implements NoticiaDef {
         tenis, 
         F1,
         motociclisme
-    }
+    };
 
     final TipusClassificades tipus;
     final String text;
@@ -32,7 +32,6 @@ class Noticia implements NoticiaDef {
         // TODO Auto-generated method stub
         
     }
-
 
     // void calcularPreuNoticia()
 }
@@ -51,4 +50,4 @@ class Redactor {
 
 }
 
-// TODO: Refactor t1 to use least privilege access and also improve your finals
+// TODO: Refactor t1 to use least privilege access
