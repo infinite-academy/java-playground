@@ -16,5 +16,3 @@ class Redactor {
     }
 
 }
-
-// TODO: Refactor t1 to use least privilege access
