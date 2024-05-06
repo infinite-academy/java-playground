@@ -6,6 +6,7 @@ import java.util.Random;
 
 class Main {
      static void main(String[] args){
+        System.out.println("Base class loaded. Checking it's sucess via accessing a static: " + Instrument.Tipus.vent);
 
         VentInstrument vent = new VentInstrument("Flauta", (new Random().nextFloat()) * 1000);        
         vent.tocar();
