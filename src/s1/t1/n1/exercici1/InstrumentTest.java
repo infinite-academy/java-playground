@@ -39,7 +39,7 @@ class Instrument {
     @SuppressWarnings("unused")
     private float preu = 0.0f;
 
-    public void tocar() {
+     void tocar() {
         System.out.printf("Està sonant un instrument de %s. \n", tipus);
     }
 }
