@@ -2,13 +2,13 @@ package s1.t1.n1.exercici1;
 
 
 // If i use this interface it breaks the code. Why? 
-// interface Instrument{
-//     void tocar();
-// }
+interface InstrumentDef{
+    void tocar();
+}
 
 
 
-class Instrument {
+class Instrument implements InstrumentDef {
     // Loaded is being used because using enums to 
     static boolean loaded = false;
 
@@ -33,13 +33,12 @@ class Instrument {
         System.out.printf("Instrument creat: %s, tipus %s, preu %.2f.\n", nom, tipus, preu);
     }
 
-    @SuppressWarnings("unused")
-    private String nom = "";
-    private String tipus = "";
-    @SuppressWarnings("unused")
-    private float preu = 0.0f;
+    
+    String nom = "";
+    String tipus = "";
+    float preu = 0.0f;
 
-     void tocar() {
+    public void tocar() {
         System.out.printf("Està sonant un instrument de %s. \n", tipus);
     }
 }
