@@ -7,14 +7,15 @@ import java.util.Random;
 public class InstrumentTest {
     public static void main(String[] args){
         System.out.println("Assert that instrument is loaded via static accessor(loaded) before instantiating: " + Instrument.loaded);
-        for (Instrument.Tipus tipus : Instrument.Tipus.values()) {
-            // Gnrate a random float between 1.0f and 1000.0f
-            float preu = (new Random().nextFloat() + 1) * 1000;
-            String nom = "Instrument-" + tipus.toString();
 
-            Instrument instrumentInstance = new Instrument(tipus.toString(), nom , preu);
-            instrumentInstance.tocar();
-        }
+        VentInstrument vent = new VentInstrument("Flauta", (new Random().nextFloat() + 1) * 1000);        
+        vent.tocar();
+
+        CordaInstrument corda = new CordaInstrument("Guitar", (new Random().nextFloat() + 1) * 1000);        
+        corda.tocar();
+
+        PercusioInstrument percusio = new PercusioInstrument("Tamborin", (new Random().nextFloat() + 1) * 1000);
+        percusio.tocar();
     }
 }
 
@@ -58,5 +59,22 @@ class Instrument {
 
     public void tocar() {
         System.out.printf("Està sonant un instrument de %s. \n", tipus);
+    }
+}
+
+class VentInstrument extends Instrument {
+    VentInstrument(String nom, float preu) {
+        super(Tipus.vent.toString(), nom, preu);
+    }
+}
+
+class CordaInstrument extends Instrument {
+    CordaInstrument(String nom, float preu) {
+        super(Tipus.corda.toString(), nom, preu);
+    }
+}
+class PercusioInstrument extends Instrument {
+    PercusioInstrument(String nom, float preu) {
+        super(Tipus.percussió.toString(), nom, preu);
     }
 }
