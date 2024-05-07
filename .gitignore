@@ -33,3 +33,5 @@ build
 
 # Ignore build output
 /bin
+
+.vscode/
