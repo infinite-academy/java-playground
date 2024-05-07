@@ -6,7 +6,8 @@ import java.util.ArrayList;
 interface VendaDef {
     float calcularTotal() throws VendaBuidaException;
     float getTotal();
-    void addProducte(Producte p);
+    boolean addProducte(Producte p);
+    Producte getProducte(int index);
 }
 
 class Venda implements VendaDef {
@@ -27,8 +28,12 @@ class Venda implements VendaDef {
         return total;
     }
 
-    public void addProducte(Producte p) {
-        productes.add(p);
+    public boolean addProducte(Producte p) {
+        return productes.add(p);
     }
-    
+
+    public Producte getProducte(int index) {
+        return productes.get(index);
+    }
+
 }
