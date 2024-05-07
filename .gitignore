@@ -31,3 +31,5 @@ assert.bash
 
 # Ignore build output
 /bin
+
+.vscode/
