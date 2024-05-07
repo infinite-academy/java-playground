@@ -1,8 +1,8 @@
 package s1.t3.n1.exercici1;
 
-class Month {
+public class Month {
     // This enum guarantees safety when creating months for the gregorian calendar
-    static enum MONTHS  {
+    public static enum MONTHS  {
         january,
         february,
         march,
@@ -16,10 +16,10 @@ class Month {
         november,
         december
     };
-    final String name;
-    final int ordinal;
+    public final String name;
+    public final int ordinal;
 
-    Month(MONTHS month) {
+    public Month(MONTHS month) {
         this.name = month.toString();
         this.ordinal = month.ordinal();
     }

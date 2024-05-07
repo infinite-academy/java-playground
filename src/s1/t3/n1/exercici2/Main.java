@@ -1,11 +1,12 @@
-package s1.t3.n1.exercici1;
+package s1.t3.n1.exercici2;
 
 import java.util.ArrayList;
+import s1.t3.n1.exercici1.Month;
 
 
 public class Main {
+    final ArrayList<Month> year = new ArrayList<Month>(11);
     void main(String[] args) {
-        final ArrayList<Month> year = new ArrayList<Month>(11);
         /*  
         Using enums here because it's baked into Month's design and simplifies this demonstration
         Alternatively I could've using a for with indexes, forEach or even write out `new Month(Month.MONTHS.monthName)` x12 or literally any other way of iterating.
@@ -30,3 +31,4 @@ public class Main {
 
     }
 }
+
