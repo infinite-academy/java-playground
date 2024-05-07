@@ -1,9 +1,5 @@
 package s1.t1.n3.exercici1;
 
-public class ManejoRedacion {
-    
-}
-
 interface NoticiaDef {
     void calcularPreuNoticia(String[] args);
 }
@@ -15,7 +11,7 @@ class Noticia implements NoticiaDef {
         tenis, 
         F1,
         motociclisme
-    }
+    };
 
     final TipusClassificades tipus;
     final String text;
@@ -28,27 +24,9 @@ class Noticia implements NoticiaDef {
         this.tipus = tipus;
     }
 
+    // Why the forced public here? Cannot reduce the visibility of the inherited method from NoticiaDefJava(67109273)
     public void calcularPreuNoticia(String[] args) {
-        // TODO Auto-generated method stub
-        
     }
-
 
     // void calcularPreuNoticia()
 }
-
-class Redactor {
-    String nom = "";
-    // Note: To assign final fields at construction time, do not assign at time of init.
-    final String dni;
-    static float sou = 1500.0f;
-    final Noticia[] Noticias = {};
-
-    Redactor(String nom, String dni, float sou) {
-        this.nom = nom;
-        this.dni = dni;
-    }
-
-}
-
-// TODO: Refactor t1 to use least privilege access and also improve your finals

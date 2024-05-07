@@ -4,59 +4,17 @@ import java.util.Random;
 
 
 
-public class Main {
-    public static void main(String[] args){
-        System.out.println("Assert that instrument is loaded via static accessor(loaded) before instantiating: " + Instrument.loaded);
-        for (Instrument.Tipus tipus : Instrument.Tipus.values()) {
-            // Gnrate a random float between 1.0f and 1000.0f
-            float preu = (new Random().nextFloat() + 1) * 1000;
-            String nom = "Instrument-" + tipus.toString();
+class Main {
+     static void main(String[] args){
+        System.out.println("Base class loaded. Checking it's sucess via accessing a static: " + Instrument.Tipus.vent);
 
-            Instrument instrumentInstance = new Instrument(tipus.toString(), nom , preu);
-            instrumentInstance.tocar();
-        }
-    }
-}
+        VentInstrument vent = new VentInstrument("Flauta", (new Random().nextFloat()) * 1000);        
+        vent.tocar();
 
-// If i use this interface it breaks the code. Why? 
-// interface Instrument{
-//     void tocar();
-// }
+        CordaInstrument corda = new CordaInstrument("Guitar", (new Random().nextFloat() ) * 1000);        
+        corda.tocar();
 
-
-
-class Instrument {
-    // Loaded is being used because using enums to 
-    static boolean loaded = false;
-
-    static {
-        // Because it will only be loaded once, this will only be printed once. 
-        System.out.println("Instrument loaded.");
-        loaded = true;
-    }
-
-    static enum Tipus {
-        vent,
-        corda,
-        percussió
-    }
-
-    
-
-    Instrument(String tipus, String nom, float preu) {
-        this.nom = nom;
-        this.preu = preu;
-        this.tipus = Tipus.valueOf(tipus).toString();
-        System.out.printf("Instrument creat: %s, tipus %s, preu %.2f.\n", nom, tipus, preu);
-    }
-
-    @SuppressWarnings("unused")
-    private String nom = "";
-    private String tipus = "";
-    @SuppressWarnings("unused")
-    private float preu = 0.0f;
-
-    public void tocar() {
-        System.out.printf("Està sonant un instrument de %s. \n", tipus);
+        PercusioInstrument percusio = new PercusioInstrument("Tamborin", (new Random().nextFloat()) * 1000);
+        percusio.tocar();
     }
 }
