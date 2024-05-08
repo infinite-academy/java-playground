@@ -26,9 +26,9 @@ public class Year {
     }
     
     public void printCalendar(){
+        System.out.println("Year calendar ---- " + cardinal + " ----");
         for(Month month : year){
-            System.out.println("Year calendar ---- " + cardinal + " ----");
-            System.out.println(month.name + " " + month.ordinal + 1);
+            System.out.println(month.name + " " + (month.ordinal + 1));
         }
     }
 
