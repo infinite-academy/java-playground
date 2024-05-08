@@ -1,26 +1,29 @@
 package s1.t3.n1.exercici1;
 
-import java.util.ArrayList;
 
 
 public class Main {
     void main(String[] args) {
-        final ArrayList<Month> year = new ArrayList<Month>(11);
-        
+        Month august = new Month(Month.MONTHS.august);
+        // Init year empty and fill manually according to instruction.
+        Year year = new Year();
         for(Month.MONTHS month : Month.MONTHS.values()){
             if(month != Month.MONTHS.august){
-                year.add(new Month(month));
+                year.addMonth(new Month(month));
             }
         }
-        // Both this and some other logic in this Main could/should be extracted into a class Year. It'd prevent code duplication on printing the year and even could handle all the ArrayList logic. Basically this could be called once to return a ready Year with full calendar, drop the month august and theb add it back. So 3 lines instead of all of these.
-        System.out.println("Year calendar ----");
-        for(Month month : year){
-            System.out.println(month.name + " " + (month.ordinal + 1));
-        }
-        year.add( 7,new Month(Month.MONTHS.august));
-        System.out.println("Year calendar ----");
-        for(Month month : year){
-            System.out.println(month.name + " " + (month.ordinal + 1));
-        }
+        // Print year's contents missing August
+        year.printCalendar();
+        // Add missing august and print
+        year.addMonth( 7, august);
+        year.printCalendar();
+        // Try to duplicate August. No error.
+        year.addMonth( 7, august);
+        // Now we'll use an extension of Year that implements a HashSet instead of an ArrayList
+        GregorianYear gregorianYear = new GregorianYear(2024);
+        gregorianYear.printCalendar();
+        // You can tell HashSet does not make guarantees for ordering.  Here I try to add a duplicate 
+        System.out.println("Added duplicate august to Gregorian Year 2024: " + gregorianYear.addMonth(august));
+        gregorianYear.printCalendar();
     }
 }
