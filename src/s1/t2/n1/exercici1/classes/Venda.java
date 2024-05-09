@@ -1,20 +1,17 @@
-package s1.t2.n1.exercici1;
+package s1.t2.n1.exercici1.classes;
 
 import java.util.ArrayList;
 
+import s1.t2.n1.exercici1.exceptions.VendaBuidaException;
+import s1.t2.n1.exercici1.interfaces.VendaInterface;
 
-interface VendaDef {
-    float calcularTotal() throws VendaBuidaException;
-    float getTotal();
-    boolean addProducte(Producte p);
-    Producte getProducte(int index);
-}
 
-class Venda implements VendaDef {
+public class Venda implements VendaInterface {
     private ArrayList<Producte> productes = new ArrayList<>();
-    private float total = 0.0f;
+    private float total;
 
     public float calcularTotal() throws VendaBuidaException {
+        total = 0.0f;
         if(productes.isEmpty()){
             throw new VendaBuidaException();
         }

@@ -1,5 +1,9 @@
 package s1.t2.n1.exercici1;
 
+import s1.t2.n1.exercici1.classes.Producte;
+import s1.t2.n1.exercici1.classes.Venda;
+import s1.t2.n1.exercici1.exceptions.VendaBuidaException;
+
 class Main {
     void main (String[] args) {
         Venda v = new Venda();
