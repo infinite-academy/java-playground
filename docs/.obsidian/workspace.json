@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "s1/t5/t5.md",
-                "mode": "source",
+                "file": "s1/t4/t4.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "s1/t5/t5.md",
+                "file": "s1/t4/t4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "s1/t5/t5.md",
+                "file": "s1/t4/t4.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "s1/t5/t5.md"
+                "file": "s1/t4/t4.md"
               }
             }
           }
@@ -147,14 +147,5 @@
     }
   },
   "active": "052431f2ee6c0b10",
-  "lastOpenFiles": [
-    "s1/t4/t4.md",
-    "s1/t4",
-    "s1/t2/t2.md",
-    "s1/t5/t5.md",
-    "s1/s1.md",
-    "s1/t5/t5.md.md",
-    "s1/t5",
-    "s1/t2"
-  ]
+  "lastOpenFiles": []
 }
