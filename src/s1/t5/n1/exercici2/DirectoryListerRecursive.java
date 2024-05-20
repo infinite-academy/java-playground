@@ -4,7 +4,6 @@ import s1.t5.n1.exercici1.DirectoryLister;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class DirectoryListerRecursive extends DirectoryLister {
     private static void printFileNames(File[] files, String indent) {
@@ -20,8 +19,7 @@ public class DirectoryListerRecursive extends DirectoryLister {
         File dir = new File(dirPath);
         DirectoryLister.validateDirectory(dir);
 
-        File[] files = dir.listFiles();
-        Arrays.sort(files); // Sort the files alphabetically
+        File[] files = DirectoryLister.getSortedFiles(dir);
 
         System.out.println("Contents of " + dir.getAbsolutePath() + ":");
         printFileNames(files, "");
