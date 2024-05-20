@@ -21,8 +21,7 @@ public class DirectoryLister {
         File dir = new File(dirPath);
         validateDirectory(dir);
 
-        File[] files = dir.listFiles();
-        Arrays.sort(files); // Sort the files alphabetically
+        File[] files = getSortedFiles(dir);
 
         System.out.println("Contents of " + dir.getAbsolutePath() + ":");
         printFileNames(files);
@@ -37,6 +36,13 @@ public class DirectoryLister {
         if (files == null) {
             throw new IOException("Error listing directory contents.");
         }
+    }
+
+    private static File[] getSortedFiles(File dir) {
+        File[] files = dir.listFiles();
+        File[] sortedFiles = Arrays.copyOf(files, files.length);
+        Arrays.sort(sortedFiles);
+        return sortedFiles;
     }
 
 }
