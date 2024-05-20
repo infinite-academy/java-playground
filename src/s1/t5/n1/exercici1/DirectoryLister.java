@@ -38,7 +38,7 @@ public class DirectoryLister {
         }
     }
 
-    private static File[] getSortedFiles(File dir) {
+    protected static File[] getSortedFiles(File dir) {
         File[] files = dir.listFiles();
         File[] sortedFiles = Arrays.copyOf(files, files.length);
         Arrays.sort(sortedFiles);
