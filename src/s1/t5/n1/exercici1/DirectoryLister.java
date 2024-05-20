@@ -12,7 +12,7 @@ public class DirectoryLister {
         }
     }
 
-    static String promptForDirectoryPath(Scanner scanner) {
+    public static String promptForDirectoryPath(Scanner scanner) {
         System.out.print("Enter the directory path: ");
         return scanner.nextLine();
     }
@@ -28,7 +28,7 @@ public class DirectoryLister {
         printFileNames(files);
     }
 
-    private static void validateDirectory(File dir) throws IOException {
+    protected static void validateDirectory(File dir) throws IOException {
         if (!dir.isDirectory()) {
             throw new IOException("Invalid directory path.");
         }
