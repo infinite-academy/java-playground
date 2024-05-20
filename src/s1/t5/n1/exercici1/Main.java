@@ -7,12 +7,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the directory path: ");
-        String dirPath = scanner.nextLine();
-        scanner.close();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter the directory path: ");
+            String dirPath = scanner.nextLine();
 
-        try {
             listDirContents(dirPath);
         } catch (IOException e) {
             System.out.println("An I/O error occurred: " + e.getMessage());
