@@ -1,6 +1,7 @@
 package s1.t5.n1.exercici1;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -11,18 +12,25 @@ public class Main {
         String dirPath = scanner.nextLine();
         scanner.close();
 
-        listDirContents(dirPath);
+        try {
+            listDirContents(dirPath);
+        } catch (IOException e) {
+            System.out.println("An I/O error occurred: " + e.getMessage());
+        }
     }
 
-    public static void listDirContents(String dirPath) {
+    public static void listDirContents(String dirPath) throws IOException {
         File dir = new File(dirPath);
 
         if (!dir.isDirectory()) {
-            System.out.println("Invalid directory path.");
-            return;
+            throw new IOException("Invalid directory path.");
         }
 
         File[] files = dir.listFiles();
+        if (files == null) {
+            throw new IOException("Error listing directory contents.");
+        }
+
         Arrays.sort(files); // Sort the files alphabetically
 
         System.out.println("Contents of " + dir.getAbsolutePath() + ":");
