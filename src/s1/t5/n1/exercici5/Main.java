@@ -4,13 +4,11 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
-import s1.t5.n1.exercici4.DirectoryUtils;
-
 public class Main {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Please enter the filename to serialize obj to (.ser) - ");
-            String filename = DirectoryUtils.promptForPath(scanner);
+            String filename = FileUtils.promptForPath(scanner);
             FileUtils.serializeObjectToFile(new MyObject(filename), filename);
             Serializable dFile = (Serializable) FileUtils.deserializeObjectFromFile(filename + ".ser");
             System.out.println(((MyObject) dFile).getMessage());
