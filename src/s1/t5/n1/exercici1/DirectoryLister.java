@@ -12,8 +12,8 @@ public class DirectoryLister {
         }
     }
 
-    public static String promptForDirectoryPath(Scanner scanner) {
-        System.out.print("Enter the directory path: ");
+    public static String promptForPath(Scanner scanner) {
+        System.out.print("enter the path(enter to confirm): ");
         return scanner.nextLine();
     }
 
