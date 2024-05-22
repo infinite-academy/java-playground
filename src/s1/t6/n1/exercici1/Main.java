@@ -1,4 +1,4 @@
-package s1.t7.n1.exercici1;
+package s1.t6.n1.exercici1;
 
 public class Main {
         public static void main(String[] args) {

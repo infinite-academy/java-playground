@@ -1,4 +1,4 @@
-package s1.t7.n1.exercici1;
+package s1.t6.n1.exercici1;
 
 public class NoGenericMethods {
     private Object obj1;

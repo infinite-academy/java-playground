@@ -1,4 +1,4 @@
-package s1.t7.n1.exercici2;
+package s1.t6.n1.exercici2;
 
 public class GenericMethods {
     public static <T, S, U> void printArguments(T arg1, S arg2, U arg3) {
