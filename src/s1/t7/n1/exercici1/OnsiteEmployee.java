@@ -12,4 +12,16 @@ public class OnsiteEmployee extends Employee {
     public double calculateSalary(int hoursWorked) {
         return super.calculateSalary(hoursWorked) + gasAllowance;
     }
+
+    /**
+     * Calculates salary including a fixed bonus.
+     * 
+     * @deprecated This method uses a fixed bonus which is no longer applicable.
+     *             Use {@link #calculateSalary(int)} instead.
+     */
+    @Deprecated
+    public double calculateSalaryWithBonus(int hoursWorked) {
+        return super.calculateSalary(hoursWorked) + 100; // Fixed bonus of 100
+    }
+
 }

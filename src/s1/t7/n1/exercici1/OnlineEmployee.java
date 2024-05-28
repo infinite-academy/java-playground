@@ -12,4 +12,15 @@ public class OnlineEmployee extends Employee {
     public double calculateSalary(int hoursWorked) {
         return super.calculateSalary(hoursWorked) + INTERNET_FEE;
     }
+
+    /**
+     * Calculates salary with a reduced internet fee.
+     * 
+     * @deprecated This method uses an outdated internet fee.
+     *             Use {@link #calculateSalary(int)} instead.
+     */
+    @Deprecated
+    public double calculateSalaryWithReducedInternet(int hoursWorked) {
+        return super.calculateSalary(hoursWorked) + (INTERNET_FEE / 2);
+    }
 }
