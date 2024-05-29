@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Month {
     // This enum guarantees safety when creating months for the gregorian calendar
 
-    private final String name;
-    private final int ordinal;
+    protected final String name;
+    protected final int ordinal;
 
     public Month(Months month) {
         this.name = month.toString();
@@ -27,7 +27,7 @@ public class Month {
 		if (getClass() != obj.getClass())
 			return false;
 		Month other = (Month) obj;
-		return Objects.equals(name, other.name) && Objects.equals(name, other.name);
+		return Objects.equals(name, other.name);
 	}
 
 }

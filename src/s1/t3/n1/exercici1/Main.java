@@ -1,9 +1,7 @@
 package s1.t3.n1.exercici1;
 
-
-
 public class Main {
-    void main(String[] args) {
+    void main() {
         Month august = new Month(Months.august);
         // Init year empty and fill manually according to instruction.
         Year year = new Year();
