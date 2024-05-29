@@ -7,7 +7,6 @@ public class Main {
 
         // Create an onsite employee
         OnsiteEmployee onsiteEmployee = new OnsiteEmployee("John", "Doe", 20.0); // Hourly rate: $20
-
         // Create an online employee
         OnlineEmployee onlineEmployee = new OnlineEmployee("Jane", "Smith", 25.0); // Hourly rate: $25
 

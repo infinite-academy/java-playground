@@ -16,6 +16,8 @@ public class OnlineEmployee extends Employee {
     /**
      * Calculates salary with a reduced internet fee.
      * 
+     * @param hoursWorked
+     * @return
      * @deprecated This method uses an outdated internet fee.
      *             Use {@link #calculateSalary(int)} instead.
      */

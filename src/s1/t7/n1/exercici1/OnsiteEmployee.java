@@ -16,6 +16,8 @@ public class OnsiteEmployee extends Employee {
     /**
      * Calculates salary including a fixed bonus.
      * 
+     * @param hoursWorked
+     * @return
      * @deprecated This method uses a fixed bonus which is no longer applicable.
      *             Use {@link #calculateSalary(int)} instead.
      */

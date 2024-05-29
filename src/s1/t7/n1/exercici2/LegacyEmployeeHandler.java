@@ -1,6 +1,7 @@
 package s1.t7.n1.exercici2;
 
-import s1.t7.n1.exercici1.*;
+import s1.t7.n1.exercici1.OnlineEmployee;
+import s1.t7.n1.exercici1.OnsiteEmployee;
 
 public class LegacyEmployeeHandler {
 
