@@ -1,3 +1,5 @@
+package s1.t8.n1.exercici8;
+
 public class StringReverser {
 
     // Define the functional interface

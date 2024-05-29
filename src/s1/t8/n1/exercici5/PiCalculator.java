@@ -1,3 +1,5 @@
+package s1.t8.n1.exercici5;
+
 public class PiCalculator {
 
     // Define the functional interface

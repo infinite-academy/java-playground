@@ -1,3 +1,5 @@
+package s1.t8.n1.exercici6;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +19,7 @@ public class SortStringsByLength {
         Collections.sort(mixedList, (a, b) -> {
             if (a instanceof String && b instanceof String) {
                 return Integer.compare(((String) a).length(), ((String) b).length());
-            } 
+            }
             return 0; // Keep the order for non-string elements
         });
 
