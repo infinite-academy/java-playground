@@ -1,10 +1,9 @@
-package s1.t8.n1.exercici3;
+// package s1.t8.n1.exercici3;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) {
         // Create a list of months
         List<String> months = Arrays.asList("January", "February", "March", "April", "May", "June",
