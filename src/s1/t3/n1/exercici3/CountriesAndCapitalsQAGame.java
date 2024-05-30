@@ -10,13 +10,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 class CountriesAndCapitalsQAGame {
-    private final Scanner scanner;
     private final HashMap<String, String> countriesAndCapitals;
     private final Random random;
     String username;
 
     public CountriesAndCapitalsQAGame() {
-        this.scanner = new Scanner(System.in);
+
         this.countriesAndCapitals = new HashMap<>();
         this.random = new Random();
     }
@@ -49,17 +48,17 @@ class CountriesAndCapitalsQAGame {
     }
 
     private void playGame() throws IOException {
-        try (scanner) {
+        try (Scanner scanner = new Scanner(System.in)) {
             int score = 0;
             int totalQuestions = 10;
-            username = promptUsername();
+            username = promptUsername(scanner);
             HashMap<String, String> countriesAndCapitalsPool = new HashMap<>(countriesAndCapitals);
 
             System.out.println("Welcome, " + username + "!");
             for (int i = 0; i < totalQuestions; i++) {
                 String country = getRandomCountryFromPool(countriesAndCapitalsPool);
                 String correctCapital = countriesAndCapitals.get(country);
-                String userAnswer = getUserAnswer(country);
+                String userAnswer = getUserAnswer(scanner, country);
 
                 if (userAnswer.equalsIgnoreCase(correctCapital)) {
                     System.out.println("Correct! The capital of " + country + " is " + correctCapital);
@@ -81,12 +80,12 @@ class CountriesAndCapitalsQAGame {
         return country;
     }
 
-    private String getUserAnswer(String country) {
+    private String getUserAnswer(Scanner scanner, String country) {
         System.out.println("What is the capital of " + country + "?");
         return scanner.nextLine();
     }
 
-    private String promptUsername() {
+    private String promptUsername(Scanner scanner) {
         System.out.println("What is your name?");
         username = scanner.nextLine();
         return username;
