@@ -1,7 +1,6 @@
 package s1.t3.n1.exercici1;
 
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class GregorianYear extends Year {
     private final HashSet<Month> months = new HashSet<>(12);
@@ -18,8 +17,7 @@ public class GregorianYear extends Year {
     @Override
     public void printCalendar() {
         System.out.println("Gregorian Year calendar ---- " + cardinal + " ----");
-        for (Iterator<Month> i = this.months.iterator(); i.hasNext();) {
-            Month month = i.next();
+        for (Month month : this.months) {
             System.out.println(month.name + " " + (month.ordinal + 1));
         }
         System.out.println("Size: " + months.size());

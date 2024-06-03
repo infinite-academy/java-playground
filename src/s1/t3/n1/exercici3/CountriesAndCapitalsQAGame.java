@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -29,15 +30,18 @@ class CountriesAndCapitalsQAGame {
         try {
             File file = new File("./src/s1/t3/n1/exercici3/resources/countries.txt");
             try (Scanner fileScanner = new Scanner(file);) {
-                for (String line = ""; fileScanner.hasNext(); line = fileScanner.nextLine()) {
+                for (String line = ""; fileScanner
+                        .hasNextLine(); line = fileScanner.nextLine()) {
                     String[] countryAndCapital = line.split("\\s");
-                    countriesAndCapitals.put(countryAndCapital[0], countryAndCapital[1]);
+                    if (countryAndCapital.length == 2)
+                        countriesAndCapitals.put(countryAndCapital[0], countryAndCapital[1]);
                 }
             }
+            if (countriesAndCapitals.size() < 1)
+                throw new NoSuchElementException("Source file could not be parsed. Map is empty.");
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
-
     }
 
     private void playGame() throws IOException {
