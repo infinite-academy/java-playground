@@ -20,7 +20,7 @@ class CountriesAndCapitalsQAGame {
         this.random = new Random();
     }
 
-    public void startGame() throws FileNotFoundException, IOException {
+    public void startGame() throws IOException {
         loadGame(countriesAndCapitals);
         playGame();
     }
@@ -28,23 +28,16 @@ class CountriesAndCapitalsQAGame {
     private void loadGame(HashMap<String, String> countriesAndCapitals) throws FileNotFoundException {
         try {
             File file = new File("./src/s1/t3/n1/exercici3/resources/countries.txt");
-            // Read the file line by line
-            try ( // Create a Scanner object for the file
-                    Scanner fileScanner = new Scanner(file)) {
-                // Read the file line by line
-                while (fileScanner.hasNextLine()) {
-                    String line = fileScanner.nextLine();
+            try (Scanner fileScanner = new Scanner(file);) {
+                for (String line = ""; fileScanner.hasNext(); line = fileScanner.nextLine()) {
                     String[] countryAndCapital = line.split("\\s");
-                    // No matches
-                    if (countryAndCapital.length < 2)
-                        break;
                     countriesAndCapitals.put(countryAndCapital[0], countryAndCapital[1]);
                 }
-                // Close the file scanner
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
+
     }
 
     private void playGame() throws IOException {
