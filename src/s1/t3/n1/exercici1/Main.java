@@ -1,14 +1,12 @@
 package s1.t3.n1.exercici1;
 
-
-
 public class Main {
-    void main(String[] args) {
-        Month august = new Month(Month.MONTHS.august);
+    void main() {
+        Month august = new Month(Months.august);
         // Init year empty and fill manually according to instruction.
         Year year = new Year();
-        for(Month.MONTHS month : Month.MONTHS.values()){
-            if(month != Month.MONTHS.august){
+        for(Months month : Months.values()){
+            if(month != Months.august){
                 year.addMonth(new Month(month));
             }
         }

@@ -4,24 +4,11 @@ import java.util.Objects;
 
 public class Month {
     // This enum guarantees safety when creating months for the gregorian calendar
-    public static enum MONTHS  {
-        january,
-        february,
-        march,
-        april,
-        may,
-        june,
-        july,
-        august,
-        september,
-        october,
-        november,
-        december
-    };
-    public final String name;
-    public final int ordinal;
 
-    public Month(MONTHS month) {
+    protected final String name;
+    protected final int ordinal;
+
+    public Month(Months month) {
         this.name = month.toString();
         this.ordinal = month.ordinal();
     }
@@ -40,7 +27,7 @@ public class Month {
 		if (getClass() != obj.getClass())
 			return false;
 		Month other = (Month) obj;
-		return Objects.equals(name, other.name) && Objects.equals(name, other.name);
+		return Objects.equals(name, other.name);
 	}
 
 }
