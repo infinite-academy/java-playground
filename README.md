@@ -12,5 +12,5 @@ Compile it yourself.
 ANd then run it, look at the output and assert the output is correct.
 
 or your can:
-
+TODO FIX assert.bash
 `bash assert.bash <sprint> <tasca> <nivel> <exercici>`

@@ -8,15 +8,18 @@ class YearTest {
     String[] months = new String[12];
     Year year = new Year(months);
 
-    @Test void yearHas12Months() {
+    @Test
+    void yearHas12Months() {
         assertTrue(year.months.length == 12);
     }
 
-    @Test void yearNotNull() {
+    @Test
+    void yearNotNull() {
         assertNotNull(year.months);
     }
 
-    @Test void yearHasAugust() {
+    @Test
+    void yearHasAugust() {
         assertTrue(year.months[7] == "August");
     }
 }
