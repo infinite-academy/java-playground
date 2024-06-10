@@ -11,28 +11,25 @@ import s1.t5.n1.exercici4.DirectoryUtils;
 
 public class FileUtils extends DirectoryUtils {
     public static void serializeObjectToFile(Serializable object, String filePath) throws IOException {
-        FileOutputStream fileOut = new FileOutputStream(filePath + ".ser");
-        ObjectOutputStream out = new ObjectOutputStream(fileOut);
-
-        try {
+        try (FileOutputStream fileOut = new FileOutputStream(filePath + ".ser");
+                ObjectOutputStream out = new ObjectOutputStream(fileOut);) {
             out.writeObject(object);
             System.out.println("Object has been successfully serialized to " + filePath);
-        } finally {
-            out.close();
-            fileOut.close();
+        } catch (IOException e) {
+            System.err.println("Error writing object to file.");
         }
     }
 
     public static Serializable deserializeObjectFromFile(String filePath) throws IOException, ClassNotFoundException {
-        FileInputStream fileIn = new FileInputStream(filePath);
-        ObjectInputStream in = new ObjectInputStream(fileIn);
-
-        try {
-            Serializable object = (Serializable) in.readObject();
-            return object;
-        } finally {
-            in.close();
-            fileIn.close();
+        Serializable object = null;
+        try (FileInputStream fileIn = new FileInputStream(filePath);
+                ObjectInputStream in = new ObjectInputStream(fileIn);) {
+            object = (Serializable) in.readObject();
+        } catch (ClassCastException exception) {
+            System.err.println("Couldn't find the class");
+        } catch (IOException exception) {
+            System.err.println("Error writing object to file");
         }
+        return object;
     }
 }
